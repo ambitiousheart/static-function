@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class Point{
+public:
+Point(int x,int y):x(x),y(y){
+count++;}
+Point(Point &p){
+x=p.x;
+y=p.y;
+count++;
+}
+int getX(){return x;}
+int getY(){return y;}
+~Point(){count--};
+void showCount(){
+cout<<" Object count= "<<count<<endl;
+}
+private:
+int x,y;
+static int account:};
+int Point::account=0;
+int main(){
+Point a(4,5);
+cout<<"A.x= "<<a.x<<"A.y= "<<a.y<<endl;
+a.showCount();
+Point b(a);
+cout<<"B.x= "<<b.x<<"B.y= "<<b.y<<endl;
+b.showCount();
+return 0;}
